@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    color: #fff;
+    z-index: 10;
+
+    &-holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-weight: 600;
+            font-size: 30px;
+        }
+
+        .navigation {
+            font-size: 0;
+
+            &-items {
+                position: relative;
+                font-size: 17px;
+                font-weight: 500;
+                color: #fff;
+                padding: 7px 15px;
+                z-index: 1;
+                transition: 0.5s;
+
+                &:not(:last-child) {
+                    margin-right: 7px;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                    border-radius: 30px;
+                    z-index: -1;
+                    transform: scale(0);
+                    opacity: 0;
+                    transition: 0.4s;
+                }
+
+                &:hover,
+                &.active {
+                    color: #000 !important;
+
+                    &::before,
+                    &.active {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.main-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../image/background.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    & img {
+        position: absolute;
+        bottom: 0;
+    }
+
+
+    .tree-left {
+        left: 0;
+    }
+
+    .tree-right {
+        right: 0;
+    }
+
+    .gate-left {
+        left: -202px;
+    }
+
+    .gate-right {
+        right: -202px;
+    }
+
+    .grass {
+        width: 100%;
+    }
+}
+
+.text-sec {
+    color: #fff;
+    background-color: #020912;
+    padding: 15px 200px 30px;
+    text-align: justify;
+
+    & h2 {
+        font-size: 3em;
+    }
+
+    & p {
+        margin-top: 15px;
+    }
+}
